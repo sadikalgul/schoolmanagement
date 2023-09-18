@@ -21,7 +21,7 @@ public abstract class Instructor {
     private String name;
     private String phoneNumber;
 
-    @OneToOne (mappedBy = "salaryInstructor")
+    @OneToOne /*(mappedBy = "salaryInstructor")*/
     private SalaryType salaryType;
 
     @OneToMany(mappedBy = "courseInstructor")

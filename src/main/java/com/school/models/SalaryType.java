@@ -20,8 +20,10 @@ public class SalaryType {
 
     private String salaryCode;
 
+    /*
     @OneToOne
     private Instructor salaryInstructor;
+     */
 
     public SalaryType(String salaryCode) {
         this.salaryCode = salaryCode;

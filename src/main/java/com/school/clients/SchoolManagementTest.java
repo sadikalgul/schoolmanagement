@@ -7,6 +7,8 @@ import jakarta.persistence.EntityManager;
 public class SchoolManagementTest {
     public static void main(String[] args) {
 
+        System.out.println("Start Process");
+
         Student student1 = new Student("Sadik Algul","Istanbul","Male","1982");
         Course course1 = new Course("Math","M101",5);
         Course course2 = new Course("Bio","B101",4);
@@ -20,11 +22,14 @@ public class SchoolManagementTest {
         Instructor instructor2 = new PermanentInstructor("Albert Einstein","1357777",salaryType2);
 
 
-        course1.getStudentList().add(student1);
+       // course1.getStudentList().add(student1);
         course1.setCourseInstructor(instructor1);
 
-        course2.getStudentList().add(student1);
+       // course2.getStudentList().add(student1);
         course2.setCourseInstructor(instructor2);
+
+        student1.getCourseList().add(course1);
+        student1.getCourseList().add(course2);
 
         EntityManager entityManager = EntityManagerUtils.getEntityManager("mysqlPU");
 
@@ -50,6 +55,6 @@ public class SchoolManagementTest {
             EntityManagerUtils.closeEntityManager(entityManager);
         }
 
-        System.out.println("Hello world!");
+        System.out.println("End Process");
     }
 }
